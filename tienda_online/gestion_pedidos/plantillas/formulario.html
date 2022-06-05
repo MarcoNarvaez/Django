@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <h1>Contactanos</h1>
+
+        {%if form.errors %}
+
+        <p style="color: red;"> POR FAVOR REVISA ESTE CAMPO!</p>
+
+        {%endif%}
+
+        <form action="" method="POST">{% csrf_token $} 
+            <table>
+
+                {{ form.as_table }}
+
+            </table>
+
+            <input type="submit" value="enviar">
+
+        </form>
+    </body>
+</html>
