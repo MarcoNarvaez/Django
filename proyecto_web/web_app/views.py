@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from servicios.models import Servicio
+from blog.models import Post
 
 # Create your views here.
 
@@ -19,7 +20,9 @@ def tienda(request):
 
 def blog(request):
     
-    return render(request, 'blog.html')
+    posts = Post.objects.all()
+    
+    return render(request, 'blog.html', {'posts': posts})
 
 def contacto(request):
     
