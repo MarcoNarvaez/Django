@@ -1,6 +1,6 @@
 body {
   font-family: 'Lora';
-  background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)) , url('../proyecto_web/web_app/static/web_app/img/iStock-1163916840.jpg');
+  background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)) , url('../proyecto_web/web_app/static/web_app/img/iStock-1163916840.jpg'); 
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -152,6 +152,15 @@ p {
   }
 }
 
+.linksCategorias {
+  color: white;
+  text-decoration: underline;
+}
+
+.linksCategorias:hover {
+  text-decoration: none;
+}
+
 .cta {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -277,3 +286,4 @@ ul.errorlist{
   font-style: italic;
   color: red;
 }
+
