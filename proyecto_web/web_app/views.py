@@ -1,6 +1,7 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import redirect, render, HttpResponse
 from servicios.models import Servicio
 from blog.models import Categoria, Post
+from contacto.forms import Formulario_contacto
 
 # Create your views here.
 
@@ -25,8 +26,19 @@ def blog(request):
     return render(request, 'blog.html', {'posts': posts})
 
 def contacto(request):
+    formulario_contacto = Formulario_contacto()
     
-    return render(request, 'contacto.html')
+    if request.method == "POST":
+        formulario_contacto = Formulario_contacto(data=request.POST)
+        if formulario_contacto.is_valid():
+            nombre = request.POST.get("nombre")
+            apellido = request.POST.get("apellido")
+            email = request.POST.get("email")
+            contenido = request.POST.get("contenido")
+            
+            return redirect("/contacto/?valido")
+    
+    return render(request, 'contacto.html', {'mi_formulario': formulario_contacto})
 
 def categoria(request, categoria_id):
     categoria = Categoria.objects.get(id = categoria_id)

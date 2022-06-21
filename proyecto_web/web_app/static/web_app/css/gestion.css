@@ -161,6 +161,14 @@ p {
   text-decoration: none;
 }
 
+.contenedorFormulario {
+  background-color: rgb(24, 64, 8);
+  border-radius: 8px;
+  padding: 10px 10px;
+  width: 50%;
+  margin: 10px auto;
+}
+
 .cta {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -286,4 +294,3 @@ ul.errorlist{
   font-style: italic;
   color: red;
 }
-

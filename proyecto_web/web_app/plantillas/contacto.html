@@ -13,7 +13,20 @@
     <title>Contacto</title>
 </head>
 <body>
-    Contacto
+    <div class="contenedorFormulario">
+
+        {% if "valido" in request.GET %}
+
+            <p style="color: white;">Informacion enviada correctamente</p>
+        
+        {% endif %}
+        <form action="" method="POST" style="text-align: center;">
+            {% csrf_token %}
+            <table style="color: white; margin: 20 px auto;">{{ mi_formulario.as_table}}</table>
+            <input type="submit" value="Enviar" style="width: 150;"">
+        </form>
+    </div>
+    {{request.POST}}
 </body>
 </html>
 
